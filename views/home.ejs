@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>MOVIEMAGIC</h1>
+        <input class="searchbar" type="text">
+        <input class="buttonText" type="button" value="Search">
+    </header>
+    <main>
+        <article>
+            <button><a href="#">Action</a></button>
+            <button><a href="#">Crime</a></button>
+            <button><a href="#">Comedy</a></button>
+            <button><a href="#">Drama</a></button>
+            <button><a href="#">Horror</a></button>
+            <button><a href="#">Music</a></button>
+        </article>
+        <section>
+            <% filmList.forEach((film)=>{%>
+                <a href="/film/<%- film.id -%>">
+                    <figure>
+                        <img src="https://image.tmdb.org/t/p/original<%- film.poster_path -%>" alt="">
+                        <figcaption>
+                            <h1>
+                                <%- film.original_title%>
+                            </h1>
+                        </figcaption>
+                    </figure>
+                </a>
+                <%})%>
+        </section>
+    </main>
+</body>
+
+</html>

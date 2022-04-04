@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="/detail.css">
+</head>
+
+<body>
+    <header>
+        <h1>MOVIEMAGIC</h1>
+        <input class="searchbar" type="text">
+        <input class="buttonText" type="button" value="Search">
+    </header>
+    <main>
+        <img src="https://image.tmdb.org/t/p/original<%- filmDetail.poster_path -%>" alt="">
+        <article>
+            <h1>
+                <%- filmDetail.original_title %>
+            </h1>
+            <div class="releasSec">
+                <p>
+                    <%- filmDetail.release_date %>
+                </p>
+                <p>Released</p>
+            </div>
+            <div class="buttonSec">
+                <% filmDetail.genres.forEach((detail)=>{%>
+                    <button>
+                        <%- detail.name%>
+                    </button>
+                    <%})%>
+            </div>
+        </article>
+        <section>
+            <h2>Plot Summary</h2>
+            <p>
+                <%- filmDetail.overview %>
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>
